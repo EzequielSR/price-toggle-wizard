@@ -1,11 +1,20 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import PricingSection from '../components/PricingSection';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen flex flex-col items-center justify-center">
+      <div className="w-full">
+        <PricingSection />
+      </div>
+      
+      {/* Background decorative elements */}
+      <div className="absolute top-0 right-0 w-24 h-24 md:w-40 md:h-40">
+        <div className="w-full h-full rounded-full bg-teal-light opacity-20 transform -translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      <div className="absolute bottom-0 left-0 w-32 h-32 md:w-56 md:h-56">
+        <div className="w-full h-full rounded-full bg-purple-light opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
       </div>
     </div>
   );
