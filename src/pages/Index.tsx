@@ -4,7 +4,7 @@ import PricingSection from '../components/PricingSection';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="w-full">
         <PricingSection />
       </div>

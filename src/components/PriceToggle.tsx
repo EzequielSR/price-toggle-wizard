@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { handleKeyboardEvent } from '../utils/keyboard';
 
 interface PriceToggleProps {
   onToggle: (isMonthly: boolean) => void;
@@ -15,25 +14,30 @@ const PriceToggle: React.FC<PriceToggleProps> = ({ onToggle }) => {
     onToggle(newValue);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleToggle();
+    }
+  };
+
   return (
     <div className="flex items-center justify-center gap-6 mt-6 mb-12">
       <span className={`text-sm md:text-base transition-colors ${isMonthly ? 'text-gray-400' : 'text-gray-700 font-medium'}`}>Annually</span>
-      <label 
-        className="switch-container"
-        onKeyDown={(e) => handleKeyboardEvent(e, handleToggle)} 
+      <div 
+        className="w-[60px] h-[30px] bg-gradient-to-r from-purple-500 to-purple-700 rounded-full p-1 cursor-pointer relative"
+        onClick={handleToggle}
+        onKeyDown={handleKeyDown}
         tabIndex={0}
         role="switch"
         aria-checked={isMonthly}
       >
-        <input 
-          type="checkbox" 
-          checked={isMonthly} 
-          onChange={handleToggle}
-          aria-label="Toggle between annual and monthly billing"
-          className="sr-only"
+        <div 
+          className={`w-[22px] h-[22px] bg-white rounded-full transition-transform duration-300 ${
+            isMonthly ? 'translate-x-[30px]' : 'translate-x-0'
+          }`} 
         />
-        <span className="switch-slider"></span>
-      </label>
+      </div>
       <span className={`text-sm md:text-base transition-colors ${isMonthly ? 'text-gray-700 font-medium' : 'text-gray-400'}`}>Monthly</span>
     </div>
   );

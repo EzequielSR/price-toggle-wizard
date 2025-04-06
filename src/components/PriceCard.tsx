@@ -20,11 +20,11 @@ const PriceCard: React.FC<PriceCardProps> = ({
 }) => {
   return (
     <div 
-      className={`price-card rounded-lg overflow-hidden shadow-lg ${
+      className={`rounded-lg overflow-hidden shadow-lg ${
         featured 
-          ? 'featured-card text-white' 
+          ? 'bg-gradient-to-r from-purple-500 to-purple-700 text-white' 
           : 'bg-white text-gray-800'
-      } flex flex-col h-full transform transition-all duration-300`}
+      } flex flex-col h-full transform hover:-translate-y-1 transition-all duration-300`}
     >
       <div className="p-6 text-center border-b border-opacity-20 border-gray-300">
         <h3 className={`text-lg font-semibold ${featured ? 'text-white' : 'text-gray-600'}`}>{tier}</h3>
@@ -47,10 +47,10 @@ const PriceCard: React.FC<PriceCardProps> = ({
         </div>
         
         <button 
-          className={`learn-more-btn w-full py-3 rounded-md text-sm uppercase tracking-wider font-semibold mt-4 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+          className={`w-full py-3 rounded-md text-sm uppercase tracking-wider font-semibold mt-4 transition-all hover:-translate-y-1 focus:outline-none focus:ring-2 ${
             featured 
-              ? 'bg-white text-purple-600 hover:bg-opacity-90 focus:ring-white' 
-              : 'bg-gradient-to-r from-purple-500 to-purple-700 text-white hover:opacity-90 focus:ring-purple-500'
+              ? 'bg-white text-purple-600 hover:shadow-lg focus:ring-white' 
+              : 'bg-gradient-to-r from-purple-500 to-purple-700 text-white hover:shadow-lg focus:ring-purple-500'
           }`}
         >
           Learn More
