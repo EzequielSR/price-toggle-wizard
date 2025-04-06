@@ -45,7 +45,7 @@ const PricingSection: React.FC = () => {
   const [isMonthly, setIsMonthly] = useState(false);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+    <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 relative">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-gray-700 mb-2">Our Pricing</h2>
         <PriceToggle onToggle={setIsMonthly} />
