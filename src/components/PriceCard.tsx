@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface PriceCardProps {
@@ -47,10 +46,10 @@ const PriceCard: React.FC<PriceCardProps> = ({
         </div>
         
         <button 
-          className={`w-full py-3 rounded-md text-sm uppercase tracking-wider font-semibold mt-4 transition-all hover:-translate-y-1 focus:outline-none focus:ring-2 ${
-            featured 
-              ? 'bg-white text-purple-600 hover:shadow-lg focus:ring-white' 
-              : 'bg-gradient-to-r from-purple-500 to-purple-700 text-white hover:shadow-lg focus:ring-purple-500'
+          className={`w-full py-3 rounded-md text-sm uppercase tracking-wider font-semibold mt-4 transition-all duration-300 border-2 ${
+            featured
+              ? 'bg-white text-purple-600 border-white hover:bg-transparent hover:text-white hover:border-white'
+              : 'bg-purple-600 text-white border-purple-600 hover:bg-white hover:text-purple-600 hover:border-purple-600'
           }`}
         >
           Learn More
